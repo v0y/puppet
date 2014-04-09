@@ -1,0 +1,3 @@
+node applejack {
+    include ntp
+}
