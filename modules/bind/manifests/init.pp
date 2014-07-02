@@ -6,24 +6,24 @@ class bind {
 
   service {
     'bind':
-      name => 'bind9',
+      name => "bind9",
       ensure => running,
-      restart => 'invoke-rc.d bind9 reload',
+      restart => "invoke-rc.d bind9 reload",
       require => [
-        Package['bind9'],
-        File['/etc/bind']
+        Package["bind9"],
+        File["/etc/bind"]
       ]
   }
 
   file {
-    '/etc/bind':
+    "/etc/bind":
       ensure => directory,
       recurse => true,
-      group => 'bind',
+      group => "bind",
       source  => [
         "puppet:///modules/bind/etc/bind.${::hostname}",
         "puppet:///modules/bind/etc/bind.${::serverkind}",
-        'puppet:///modules/bind/etc/bind/'
+        "puppet:///modules/bind/etc/bind/"
       ],
       notify => Service['bind']
   }
