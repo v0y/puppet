@@ -31,3 +31,4 @@ define account::system(
       mode    => $home_mode,
       require => User[$title]
   }
+}
