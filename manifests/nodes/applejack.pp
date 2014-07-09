@@ -10,4 +10,10 @@ node 'applejack' {
   Group <| title == 'webroot' |>
 
   Account::System <| title == 'lolwtf.pl' |>
+
+  include uwsgi
+  uwsgi::config {
+    [ 'lolwtf.pl' ]:
+      ensure => present
+  }
 }
