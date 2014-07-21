@@ -9,6 +9,7 @@ node 'applejack' {
   Group <| title == 'webroot' |>
 
   Account::System <| title == 'lolwtf.pl' |>
+  Account::System <| title == 'voy' |>
 
   include uwsgi
   uwsgi::config {
