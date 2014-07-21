@@ -1,4 +1,5 @@
 class virtualenv {
+
   package { 'python2.7':
     ensure    => installed
   }
@@ -7,5 +8,12 @@ class virtualenv {
   }
   package { 'python-virtualenv':
     ensure => installed
+  }
+
+  file {
+    '/var/lib/virtualenv':
+      ensure  => directory,
+      mode    => '0664',
+      group   => 'virtualenv',
   }
 }

@@ -1,7 +1,6 @@
 node 'applejack' {
   include ntp
   include bind
-  include virtualenv
   include virtual::account::system
   include virtual::group
 
@@ -13,6 +12,12 @@ node 'applejack' {
 
   include uwsgi
   uwsgi::config {
+    [ 'lolwtf.pl' ]:
+      ensure => present
+  }
+
+  include virtualenv
+  virtualenv::config{
     [ 'lolwtf.pl' ]:
       ensure => present
   }
