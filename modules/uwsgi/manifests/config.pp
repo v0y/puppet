@@ -17,10 +17,12 @@ define uwsgi::config(
         default => absent
       },
       source  => [
+        "puppet:///modules/uwsgi/etc/uwsgi/apps-available/${title}.ini.${::hostname}",
+        "puppet:///modules/uwsgi/etc/uwsgi/apps-available/${title}.ini.${::serverkind}",
         "puppet:///modules/uwsgi/etc/uwsgi/apps-available/${title}.ini"
       ],
       require => [
-        Package['uwsgi-plugin-python'],
+        Package['uwsgi-plugin-python', 'uwsgi-plugin-python3'],
         File["/var/run/uwsgi/${title}"]
       ]
   }
