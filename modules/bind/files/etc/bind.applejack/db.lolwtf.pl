@@ -2,7 +2,7 @@ $TTL 1800s
 $ORIGIN lolwtf.pl.
 
 @  IN  SOA NS1.DIGITALOCEAN.COM.  hostmaster.lolwtf.pl. (
-  2014052600  ; serial
+  2014072400  ; serial
   3600        ; refreshs
   900         ; refresh update retry
   1209600     ; when master dies.. after this time slave goes away..
