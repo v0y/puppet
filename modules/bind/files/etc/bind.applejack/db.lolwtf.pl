@@ -14,6 +14,6 @@ $ORIGIN lolwtf.pl.
 @  IN  NS  NS3.DIGITALOCEAN.COM.
 
 @  300 IN  A 188.226.222.101
-@  300 IN TXT "v=spf1 a:lolwtf.pl ~all"
+@  300 IN TXT "zoho-verification=zmverify.zoho.com"
 
 *  188.226.222.101
