@@ -11,6 +11,14 @@ node 'applejack' {
   Account::System <| title == 'lolwtf.pl' |>
   Account::System <| title == 'voy' |>
 
+  include nginx
+  nginx::vhost::config {
+    [ 'lolwtf.pl' ]:
+      require => [
+        Uwsgi::Config['lolwtf.pl']
+      ]
+  }
+
   include uwsgi
   uwsgi::config {
     [ 'lolwtf.pl' ]:
