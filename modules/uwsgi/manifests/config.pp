@@ -46,7 +46,13 @@ define uwsgi::config(
 
   file { "/var/lib/uwsgi/${title}":
     ensure   => directory,
-    owner    => $title,
+    owner    => 'deployer',
+    mode     => '0751'
+  }
+
+  file { "/var/lib/uwsgi/${title}/production":
+    ensure   => directory,
+    owner    => 'deployer',
     mode     => '0751'
   }
 }
