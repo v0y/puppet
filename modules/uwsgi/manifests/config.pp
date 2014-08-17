@@ -38,21 +38,40 @@ define uwsgi::config(
       notify  => Service['uwsgi']
   }
 
+  # dirs for source code
   file { "/var/lib/uwsgi":
     ensure   => directory,
     owner    => 'root',
-    mode     => '0751'
+    group    => 'uwsgi',
+    mode     => '0770'
   }
 
   file { "/var/lib/uwsgi/${title}":
     ensure   => directory,
     owner    => 'deployer',
-    mode     => '0751'
+    group    => 'uwsgi',
+    mode     => '0770'
   }
 
   file { "/var/lib/uwsgi/${title}/production":
     ensure   => directory,
     owner    => 'deployer',
-    mode     => '0751'
+    group    => 'uwsgi',
+    mode     => '0770'
+  }
+
+  # dirs for media/statics
+  file { "/var/www/${title}/public/static":
+    ensure   => directory,
+    owner    => 'lolwtf.pl',
+    group    => 'webroot',
+    mode     => '0660'
+  }
+
+  file { "/var/www/${title}/public/media":
+    ensure   => directory,
+    owner    => 'lolwtf.pl',
+    group    => 'webroot',
+    mode     => '0660'
   }
 }
