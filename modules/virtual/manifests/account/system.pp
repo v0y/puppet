@@ -8,4 +8,13 @@ class virtual::account::system {
     home_mode => '0751',
     groups    => [ 'uwsgi', 'webroot', 'virtualenv' ]
   }
+  @account::system {
+    'deployer':
+      uid       => 5001,
+      gid       => 5001,
+      shell     => '/bin/bash',
+      home      => '/home/deployer',
+      home_mode => '0751',
+      groups    => [ 'ssh', 'users' ]
+  }
 }

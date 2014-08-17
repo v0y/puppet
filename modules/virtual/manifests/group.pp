@@ -11,5 +11,13 @@ class virtual::group {
     'webroot':
       ensure  => present,
       gid     => 9997;
+
+    'ssh':
+      ensure => present,
+      gid    => 9996;
+
+    'users':
+      ensure  => present,
+      gid     => 9995;
   }
 }

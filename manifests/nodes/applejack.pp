@@ -8,6 +8,7 @@ node 'applejack' {
   Group <| title == 'webroot' |>
 
   include virtual::account::system
+  Account::System <| title == 'deployer' |>
   Account::System <| title == 'lolwtf.pl' |>
 
   include virtual::account::human

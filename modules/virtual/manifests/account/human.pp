@@ -6,6 +6,6 @@ class virtual::account::human {
     shell     => '/bin/bash',
     home      => '/home/voy',
     home_mode => '0751',
-    groups    => [ 'uwsgi', 'webroot', 'virtualenv' ]
+    groups    => [ 'uwsgi', 'webroot', 'virtualenv', 'ssh', 'users' ]
   }
 }
