@@ -1,15 +1,17 @@
 node 'applejack' {
   include ntp
   include bind
-  include virtual::account::system
-  include virtual::group
 
+  include virtual::group
   Group <| title == 'uwsgi' |>
   Group <| title == 'virtualenv' |>
   Group <| title == 'webroot' |>
 
+  include virtual::account::system
   Account::System <| title == 'lolwtf.pl' |>
-  Account::System <| title == 'voy' |>
+
+  include virtual::account::human
+  Account::Human <| title == 'voy' |>
 
   include nginx
   nginx::vhost::config {
