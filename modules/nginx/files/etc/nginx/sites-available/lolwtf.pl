@@ -2,6 +2,7 @@ server {
   listen 80;
   server_name lolwtf.pl;
   root /var/www/lolwtf.pl/public;
+  client_max_body_size 10M;
 
   location ~ /(404|50[0-5]).html {
     root /var/www/error_pages;
