@@ -15,6 +15,6 @@ class virtual::account::system {
       shell     => '/bin/bash',
       home      => '/home/deployer',
       home_mode => '0751',
-      groups    => [ 'ssh', 'users', 'uwsgi', 'webroot' ]
+      groups    => [ 'ssh', 'users', 'uwsgi', 'webroot', 'virtualenv' ]
   }
 }
