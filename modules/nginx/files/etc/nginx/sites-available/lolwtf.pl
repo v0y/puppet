@@ -15,12 +15,12 @@ server {
     rewrite ^ http://lolwtf.pl;
   }
 
-  location /static/ {
-    alias /var/www/lolwtf.pl/public/static/;
+  location /static {
+    root /var/www/lolwtf.pl/public;
   }
 
-  location /media/ {
-    alias /var/www/lolwtf.pl/public/media/;
+  location /media {
+    root /var/www/lolwtf.pl/public;
   }
 
   location / {
