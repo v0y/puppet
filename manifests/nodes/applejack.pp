@@ -10,6 +10,7 @@ node 'applejack' {
   include virtual::account::system
   Account::System <| title == 'deployer' |>
   Account::System <| title == 'lolwtf.pl' |>
+  Account::System <| title == 'www-data' |>
 
   include virtual::account::human
   Account::Human <| title == 'voy' |>
