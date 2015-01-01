@@ -15,7 +15,7 @@ server {
     rewrite ^ http://lolwtf.pl;
   }
 
-  rewrite ^(.*[^/])/$ $1 permanent;
+  rewrite ^(/media/.*)/$ $1 permanent;
 
   location /static {
     alias /var/www/lolwtf.pl/public/static;
