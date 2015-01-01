@@ -17,4 +17,13 @@ class virtual::account::system {
       home_mode => '0751',
       groups    => [ 'ssh', 'users', 'uwsgi', 'webroot', 'virtualenv' ]
   }
+  @account::system {
+    'www-data':
+      uid       => 5002,
+      gid       => 5002,
+      shell     => '/bin/false',
+      home      => '/var/www/www-data',
+      home_mode => '0751',
+      groups    => [ 'deployer' ]
+  }
 }
