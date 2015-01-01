@@ -6,7 +6,7 @@ class virtual::account::system {
     shell     => '/bin/false',
     home      => '/var/www/lolwtf.pl',
     home_mode => '0751',
-    groups    => [ 'ssh', 'users', 'uwsgi', 'virtualenv', 'webroot' ]
+    groups    => [ 'ssh', 'users', 'uwsgi', 'virtualenv', 'webroot', 'deployer' ]
   }
   @account::system {
     'deployer':
