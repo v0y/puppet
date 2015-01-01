@@ -12,7 +12,7 @@ server {
     rewrite ^ http://lolwtf.pl;
   }
 
-  location /site_media/static {
+  location /static {
     alias /var/www/lolwtf.pl/public/static;
   }
 
