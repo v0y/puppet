@@ -19,6 +19,10 @@ server {
     alias /var/www/lolwtf.pl/public/static;
   }
 
+  location /media {
+    alias /var/www/lolwtf.pl/public/media;
+  }
+
   location / {
     include uwsgi_params;
     uwsgi_pass unix:/var/run/uwsgi/app/lolwtf.pl/socket;
