@@ -11,6 +11,7 @@ define virtualenv::config(
     group    => 'virtualenv'
   }
 
+  include python
   python::pyvenv { "/var/lib/virtualenv/${title}/production" :
     ensure       => present,
     version      => 'system',
