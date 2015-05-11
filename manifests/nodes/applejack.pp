@@ -28,8 +28,8 @@ node 'applejack' {
       ensure => present
   }
 
-  include virtualenv
-  virtualenv::config{
+  include python
+  python::config{
     [ 'lolwtf.pl' ]:
       ensure => present
   }

@@ -11,11 +11,10 @@ define virtualenv::config(
     group    => 'virtualenv'
   }
 
-  include python
-  python::pyvenv { "/var/lib/virtualenv/${title}/production" :
-    ensure       => present,
-    version      => 'system',
-    owner        => $title,
-    group        => 'virtualenv',
+  file { "/var/lib/virtualenv/${title}/production":
+    ensure   => directory,
+    owner    => $title,
+    mode     => '0664',
+    group    => 'virtualenv'
   }
 }
