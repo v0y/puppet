@@ -33,11 +33,4 @@ node 'applejack' {
     [ 'lolwtf.pl' ]:
       ensure => present
   }
-
-  virtualenv::exec{
-    virtualenv => 'lolwtf.pl',
-    user       => 'lolwtf.pl',
-    command    => 'create_lolwtf.pl_venv',
-    title      => 'create_lolwtf.pl_venv',
-  }
 }
