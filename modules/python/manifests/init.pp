@@ -1,11 +1,9 @@
-class python {
+include python
 
-  class { 'python' :
-    version    => '3',
-    pip        => true,
-    dev        => true,
-    virtualenv => true,
-    gunicorn   => false,
-  }
-
+class { 'python' :
+  version    => '3',
+  pip        => true,
+  dev        => true,
+  virtualenv => true,
+  gunicorn   => false,
 }
