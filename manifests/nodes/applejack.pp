@@ -28,9 +28,26 @@ node 'applejack' {
       ensure => present
   }
 
-  include virtualenv
-  virtualenv::config{
-    [ 'lolwtf.pl' ]:
-      ensure => present
+  class { 'python' :
+    version    => '3',
+    pip        => true,
+    dev        => true,
+    virtualenv => true,
+    gunicorn   => false,
   }
+
+  python::pyvenv { '/var/www/lolwtf.pl' :
+    ensure       => present,
+    version      => '3',
+    systempkgs   => true,
+    venv_dir     => '/var/lib/virtualenv/lolwtf.pl',
+    owner        => 'lolwtf.pl',
+    group        => 'virtualenv',
+  }
+
+#  include virtualenv
+#  virtualenv::config{
+#    [ 'lolwtf.pl' ]:
+#      ensure => present
+#  }
 }
