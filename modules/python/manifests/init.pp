@@ -1,3 +1,5 @@
+include python
+
 class { 'python' :
   version    => '3',
   pip        => true,
