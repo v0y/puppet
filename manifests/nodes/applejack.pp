@@ -28,9 +28,15 @@ node 'applejack' {
       ensure => present
   }
 
-  include python
-  python::config{
+  include virtualenv
+  virtualenv::config{
     [ 'lolwtf.pl' ]:
       ensure => present
+  }
+
+  virtualenv::exec{
+    virtualenv => 'lolwtf.pl',
+    user       => 'lolwtf.pl',
+    title      => 'create_lolwtf.pl_venv'
   }
 }
