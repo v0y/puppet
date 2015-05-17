@@ -1,6 +1,6 @@
 $ORIGIN lolwtf.pl.
 $TTL 1800
-lolwtf.pl. IN SOA ns1.digitalocean.com. hostmaster.lolwtf.pl. 1431895997 10800 3600 604800 1800
+lolwtf.pl. IN SOA ns1.digitalocean.com. hostmaster.lolwtf.pl. 1431896000 10800 3600 604800 1800
 lolwtf.pl. 1800 IN A 188.226.222.101
 lolwtf.pl. 1800 IN NS ns1.digitalocean.com.
 lolwtf.pl. 1800 IN NS ns2.digitalocean.com.
