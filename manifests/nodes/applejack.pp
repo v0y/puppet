@@ -31,11 +31,7 @@ node 'applejack' {
 
   include uwsgi
   uwsgi::config {
-    [ 'lolwtf.pl' ]:
-      ensure => present
-  }
-  uwsgi::config {
-    [ 'polski-bus.lolwtf.pl' ]:
+    [ 'lolwtf.pl', 'polski-bus.lolwtf.pl' ]:
       ensure => present
   }
 
@@ -59,11 +55,7 @@ node 'applejack' {
 
   include virtualenv
   virtualenv::config{
-    [ 'lolwtf.pl' ]:
-      ensure => present
-  }
-  virtualenv::config{
-    [ 'polski-bus.lolwtf.pl' ]:
+    [ 'lolwtf.pl', 'polski-bus.lolwtf.pl' ]:
       ensure => present
   }
 }
