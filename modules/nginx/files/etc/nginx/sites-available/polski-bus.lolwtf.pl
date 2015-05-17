@@ -2,7 +2,7 @@ server {
   access_log /var/log/nginx/x_access.log;
   error_log /var/log/nginx/x_error.log;
 
-  listen 80;
+  listen 81;
   server_name polski-bus.lolwtf.pl;
   root /var/www/polski-bus.lolwtf.pl/public;
   client_max_body_size 10M;
@@ -11,8 +11,8 @@ server {
     root /var/www/error_pages;
   }
 
-  if ($http_host != "polski-bus.lolwtf.pl") {
-    rewrite ^ http://polski-bus.lolwtf.pl;
+  if ($http_host != "lolwtf.pl") {
+    rewrite ^ http://lolwtf.pl;
   }
 
   rewrite ^(/media/.*)/$ $1 permanent;
