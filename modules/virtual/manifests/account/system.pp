@@ -19,8 +19,8 @@ class virtual::account::system {
   }
   @account::system {
     'polski-bus.lolwtf.pl':
-      uid       => 5002,
-      gid       => 5002,
+      uid       => 5012,
+      gid       => 5012,
       shell     => '/bin/false',
       home      => '/var/www/polski-bus.lolwtf.pl',
       home_mode => '0751',
@@ -28,8 +28,8 @@ class virtual::account::system {
   }
   @account::system {
     'git':
-      uid       => 5003,
-      gid       => 5003,
+      uid       => 5013,
+      gid       => 5013,
       shell     => '/bin/bash',
       home      => '/home/git',
       home_mode => '0751',
