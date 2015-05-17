@@ -26,13 +26,4 @@ class virtual::account::system {
       home_mode => '0751',
       groups    => [ 'ssh', 'users', 'uwsgi', 'virtualenv', 'webroot', 'deployer' ]
   }
-  @account::system {
-    'git':
-      uid       => 5013,
-      gid       => 5013,
-      shell     => '/bin/bash',
-      home      => '/home/git',
-      home_mode => '0751',
-      groups    => [ 'ssh', 'users' ]
-  }
 }
