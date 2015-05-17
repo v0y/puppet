@@ -63,14 +63,14 @@ define uwsgi::config(
   # dirs for media/statics
   file { "/var/www/${title}/public/static":
     ensure   => directory,
-    owner    => 'lolwtf.pl',
+    owner    => title,
     group    => 'webroot',
     mode     => '0660'
   }
 
   file { "/var/www/${title}/public/media":
     ensure   => directory,
-    owner    => 'lolwtf.pl',
+    owner    => title,
     group    => 'webroot',
     mode     => '0660'
   }
