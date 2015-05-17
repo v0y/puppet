@@ -20,4 +20,11 @@ class uwsgi {
       hasstatus => true,
       status    => "/etc/init.d/uwsgi status $project",
   }
+
+  file { "/var/lib/uwsgi":
+    ensure   => directory,
+    owner    => 'root',
+    group    => 'uwsgi',
+    mode     => '0770'
+  }
 }

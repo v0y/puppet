@@ -39,13 +39,6 @@ define uwsgi::config(
   }
 
   # dirs for source code
-  file { "/var/lib/uwsgi":
-    ensure   => directory,
-    owner    => 'root',
-    group    => 'uwsgi',
-    mode     => '0770'
-  }
-
   file { "/var/lib/uwsgi/${title}":
     ensure   => directory,
     owner    => 'deployer',
