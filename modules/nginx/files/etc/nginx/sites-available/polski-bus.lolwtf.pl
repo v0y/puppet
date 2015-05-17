@@ -2,7 +2,7 @@ server {
   access_log /var/log/nginx/x_access.log;
   error_log /var/log/nginx/x_error.log;
 
-  listen 81;
+  listen 80;
   server_name polski-bus.lolwtf.pl;
   root /var/www/polski-bus.lolwtf.pl/public;
   client_max_body_size 10M;
