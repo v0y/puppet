@@ -17,4 +17,13 @@ class virtual::account::system {
       home_mode => '0751',
       groups    => [ 'ssh', 'users', 'uwsgi', 'webroot', 'virtualenv' ]
   }
+  @account::system {
+    'hotele.lolwtf.pl':
+      uid       => 5012,
+      gid       => 5012,
+      shell     => '/bin/false',
+      home      => '/var/www/hotele.lolwtf.pl',
+      home_mode => '0751',
+      groups    => [ 'ssh', 'users', 'uwsgi', 'virtualenv', 'webroot', 'deployer' ]
+  }
 }

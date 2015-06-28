@@ -10,6 +10,7 @@ node 'applejack' {
   include virtual::account::system
   Account::System <| title == 'deployer' |>
   Account::System <| title == 'lolwtf.pl' |>
+  Account::System <| title == 'hotele.lolwtf.pl' |>
 
   include virtual::account::human
   Account::Human <| title == 'voy' |>
@@ -21,9 +22,17 @@ node 'applejack' {
         Uwsgi::Config['lolwtf.pl']
       ]
   }
+
+  nginx::vhost::config {
+    [ 'hotele.lolwtf.pl' ]:
+      require => [
+        Uwsgi::Config['hotele.lolwtf.pl']
+      ]
+  }
+
   include uwsgi
   uwsgi::config {
-    [ 'lolwtf.pl' ]:
+    [ 'lolwtf.pl', 'hotele.lolwtf.pl' ]:
       ensure => present
   }
 
@@ -47,7 +56,7 @@ node 'applejack' {
 
   include virtualenv
   virtualenv::config{
-    [ 'lolwtf.pl' ]:
+    [ 'lolwtf.pl', 'hotele.lolwtf.pl' ]:
       ensure => present
   }
 }
