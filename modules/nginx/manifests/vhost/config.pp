@@ -3,14 +3,6 @@ define nginx::vhost::config {
   $group = $title
 
   file {
-    [ "/var/www/${title}/public" ]:
-      ensure  => directory,
-      mode    => '0751',
-      owner   => $owner,
-      group   => $group
-  }
-
-  file {
     "/etc/nginx/sites-available/${title}":
       ensure  => file,
       source  => [
