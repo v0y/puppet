@@ -17,10 +17,4 @@ define virtualenv::config(
     mode     => '0664',
     group    => 'virtualenv'
   }
-
-  file { "/var/lib/virtualenv/${title}/production/*":
-    owner    => 'deployer',
-    mode     => '0664',
-    group    => 'virtualenv'
-  }
 }
