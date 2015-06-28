@@ -3,7 +3,7 @@ define nginx::vhost::config {
   $group = $title
 
   file {
-    [ "/var/www/${title}/public_html" ]:
+    [ "/var/www/${title}/public" ]:
       ensure  => directory,
       mode    => '0751',
       owner   => $owner,
@@ -19,7 +19,7 @@ define nginx::vhost::config {
       ],
       notify  => Service['nginx'],
       require => [
-        File["/var/www/${title}/public_html"]
+        File["/var/www/${title}/public"]
       ]
   }
 
