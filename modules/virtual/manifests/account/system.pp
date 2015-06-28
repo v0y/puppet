@@ -19,8 +19,8 @@ class virtual::account::system {
   }
   @account::system {
     'hotele.lolwtf.pl':
-      uid       => 5012,
-      gid       => 5012,
+      uid       => 5013,
+      gid       => 5013,
       shell     => '/bin/false',
       home      => '/var/www/hotele.lolwtf.pl',
       home_mode => '0751',
